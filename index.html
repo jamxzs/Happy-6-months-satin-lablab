@@ -200,14 +200,27 @@
             color: #d81b60;
         }
 
+        /* SCROLL FIX: make expanded letter scrollable and not cut off */
         .letter-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease;
+            transition: max-height 0.6s ease;
         }
 
         .letter.expanded .letter-content {
-            max-height: 500px;
+            max-height: 70vh;
+            overflow-y: auto;
+            padding-right: 10px;
+            scroll-behavior: smooth;
+        }
+
+        .letter-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .letter-content::-webkit-scrollbar-thumb {
+            background: #ffb7c5;
+            border-radius: 10px;
         }
 
         /* Music Tab */
@@ -379,6 +392,10 @@
             .gallery {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .letter.expanded .letter-content {
+                max-height: 60vh;
+            }
         }
     </style>
 </head>
@@ -415,19 +432,18 @@
                         <h3>A Letter For You</h3>
                         <span>👇 Click to open</span>
                     </div>
-                   <div class="letter-content">
-     <p>Happy 6 months po satin, lablab ko. ❤️</p>
-     <p>Alam ko pong hindi naging madali yung satin, kasi minsan may mga challenges na dumadating na parang gusto na nating sumuko. Pero sa kabila ng lahat, lagi nating pinapaalala sa isa’t isa na magiging worth it din ang lahat. At dun ako pinaka-masaya, kasi kahit mahirap, pinipili pa rin natin na manatili.</p>
+                    <div class="letter-content">
+                        <p>Happy 6 months po satin, lablab ko. ❤️</p>
+                        <p>Alam ko pong hindi naging madali yung satin, kasi minsan may mga challenges na dumadating na parang gusto na nating sumuko. Pero sa kabila ng lahat, lagi nating pinapaalala sa isa’t isa na magiging worth it din ang lahat. At dun ako pinaka-masaya, kasi kahit mahirap, pinipili pa rin natin na manatili.</p>
 
-     <p>Gusto kong mag-thank you sa lahat ng ginawa at ginagawa mo para sakin — sa mga simpleng effort mo na minsan hindi mo na napapansin pero sobra kong naaappreciate, sa patience mo kahit minsan makulit ako at tanong ng tanong, at sa care at love na sobra kong nararamdaman araw-araw.</p>
+                        <p>Gusto kong mag-thank you sa lahat ng ginawa at ginagawa mo para sakin — sa mga simpleng effort mo na minsan hindi mo na napapansin pero sobra kong naaappreciate, sa patience mo kahit minsan makulit ako at tanong ng tanong, at sa care at love na sobra kong nararamdaman araw-araw.</p>
 
-     <p>Hindi man perpekto ang sitwasyon natin, pero ikaw pa rin ang araw-araw kong pinipilin at mamahalin. 6 months pa lang po, pero parang ang dami na nating na-overcome at na-build na memories kahit di pa tayo magkasama.</p>
+                        <p>Hindi man perpekto ang sitwasyon natin, pero ikaw pa rin ang araw-araw kong pinipilin at mamahalin. 6 months pa lang po, pero parang ang dami na nating na-overcome at na-build na memories kahit di pa tayo magkasama.</p>
 
-     <p>Gusto ko pang mas marami pang mahahabang months, mas mahahabang years, at kung pwede, isang buong lifetime na ikaw lang ang kasama ko. Kung dumating man po yung pinakahihintay po natin, promise wala pong magbabago — mahal na mahal ko po kayong dalawa ng sobra sobra.</p>
+                        <p>Gusto ko pang mas marami pang mahahabang months, mas mahahabang years, at kung pwede, isang buong lifetime na ikaw lang ang kasama ko. Kung dumating man po yung pinakahihintay po natin, promise wala pong magbabago — mahal na mahal ko po kayong dalawa ng sobra sobra.</p>
 
-     <p>Thank you, lablab, for choosing me, for staying with me, and for loving me. I love you so much, lablabko, today and always. ❤️</p>
-    </div>
-
+                        <p>Thank you, lablab, for choosing me, for staying with me, and for loving me. I love you so much, lablabko, today and always. ❤️</p>
+                    </div>
                 </div>
             </div>
 
@@ -437,7 +453,7 @@
                 <div class="song">
                     <div class="song-icon">🎵</div>
                     <div class="song-info">
-                        <h4> Ikaw lang patutunguhan</h4>
+                        <h4>Ikaw lang patutunguhan</h4>
                         <p>by Amiel Sol</p>
                         <audio id="song1" src="music/ikaw.mp3"></audio>
                         <div class="music-controls">
